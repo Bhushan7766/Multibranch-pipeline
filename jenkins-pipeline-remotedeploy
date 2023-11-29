@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/architectdevops7/jenkins-pipelines.git'
+                 git 'https://github.com/Bhushan7766/Jenkins-pipeline.git'
             }
         }
         stage('Build Package') {
@@ -16,8 +16,13 @@ pipeline {
         }
         stage('Deploy Package') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat-user', path: '', url: 'http://54.85.43.193:8080/')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'bhushan', path: '', url: 'http://15.207.99.6:9090/')], contextPath: null, war: '**/*.war'
+            }
+        }    
+    }
+    post {
+        always {
+            emailext body: '$DEFAULT_CONTENT', subject: '$DEFAULT_SUBJECT', to: '$DEFAULT_REPLYTO'
             }
         }
-    }
 }
