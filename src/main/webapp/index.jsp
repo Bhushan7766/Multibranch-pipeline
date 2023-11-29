@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Welcome to the DevOps World</h1>
+    <h1>Welcome to the world of DEVOPS</h1>
 
     <form id="task-form">
         <label for="task-input">Task:</label>
